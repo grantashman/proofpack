@@ -4,8 +4,16 @@ import '../styles/page.css';
 
 const pilotEndpoint = import.meta.env.PUBLIC_PILOT_ENDPOINT ?? '';
 const pilotEmail = import.meta.env.PUBLIC_PILOT_EMAIL ?? '';
-const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? Astro.url.origin;
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const route = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const siteUrl = new URL(import.meta.env.PUBLIC_SITE_URL ?? Astro.site ?? Astro.url.origin);
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const sampleReportUrl = route('sample-report/');
+const samplePdfUrl = route('assets/proofpack-sample-report.pdf');
+const brandMarkUrl = route('brand/proofpack-mark.svg');
+const brandIconUrl = route('brand/proofpack-icon-180.png');
+const ogImageUrl = new URL(route('brand/proofpack-og.png'), siteUrl);
 const price = formatPilotPrice();
 const structuredData = {
   '@context': 'https://schema.org',
@@ -32,13 +40,13 @@ const structuredData = {
     <title>ProofPack — Proof-of-service reports for commercial cleaners</title>
     <meta name="description" content="Turn site checklists, photos and issue notes into a client-ready proof-of-service report before your cleaning team leaves the building." />
     <link rel="canonical" href={canonicalUrl} />
-    <link rel="icon" href="/brand/proofpack-mark.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/brand/proofpack-icon-180.png" />
+    <link rel="icon" href={brandMarkUrl} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={brandIconUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_AU" />
     <meta property="og:title" content="ProofPack — Leave every clean with proof" />
     <meta property="og:description" content="Client-ready service reports for Australian commercial cleaners." />
-    <meta property="og:image" content={`${siteUrl}/brand/proofpack-og.png`} />
+    <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={canonicalUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
@@ -66,7 +74,7 @@ const structuredData = {
           <p class="hero__lede">Turn site checklists, before-and-after photos and issue notes into a client-ready service report before your team leaves the building.</p>
           <div class="hero__actions">
             <a class="button" href="#pilot">Apply for the pilot</a>
-            <a class="text-link" href="/sample-report/">View the sample report <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href={sampleReportUrl}>View the sample report <span aria-hidden="true">↗</span></a>
           </div>
           <ul class="assurance-list" aria-label="Pilot assurances">
             <li>Australian-ready</li>
@@ -150,7 +158,7 @@ const structuredData = {
             <span class="step-number" aria-hidden="true">3</span>
             <h3>Review once. Send one useful report.</h3>
             <p>Your logo, service summary, checks, photographs and follow-ups are assembled into a consistent PDF and share link.</p>
-            <a class="text-link" href="/assets/proofpack-sample-report.pdf">Download the example PDF <span aria-hidden="true">↓</span></a>
+            <a class="text-link" href={samplePdfUrl}>Download the example PDF <span aria-hidden="true">↓</span></a>
           </div>
           <figure class="send-panel" aria-label="Example report delivery summary">
             <div class="send-panel__paper">
@@ -259,7 +267,7 @@ const structuredData = {
       <div class="footer__meta">
         <a class="wordmark wordmark--small" href="#top">ProofPack</a>
         <span>Australian commercial-cleaning pilot · 2026</span>
-        <a href="/sample-report/">Sample report</a>
+        <a href={sampleReportUrl}>Sample report</a>
       </div>
     </footer>
 

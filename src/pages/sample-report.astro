@@ -1,5 +1,9 @@
 ---
 import '../styles/report.css';
+const rawBase = import.meta.env.BASE_URL;
+const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
+const homeUrl = base;
+const samplePdfUrl = `${base}assets/proofpack-sample-report.pdf`;
 ---
 <!doctype html>
 <html lang="en-AU">
@@ -11,8 +15,8 @@ import '../styles/report.css';
   </head>
   <body>
     <header class="sample-nav">
-      <a href="/">← Back to ProofPack</a>
-      <a href="/assets/proofpack-sample-report.pdf">Download PDF</a>
+      <a href={homeUrl}>← Back to ProofPack</a>
+      <a href={samplePdfUrl}>Download PDF</a>
     </header>
     <main class="report">
       <div class="report__example">Fictional example · for product demonstration</div>

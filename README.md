@@ -2,7 +2,7 @@
 
 Client-ready proof-of-service reports for Australian commercial cleaners.
 
-**Repository status:** private validation build. The landing page and assets are complete and tested; the product backend, public domain, submission endpoint, operator details and privacy policy are intentionally not invented or deployed.
+**Repository status:** private source repository with a public static validation preview at <https://grantashman.github.io/proofpack/>. The product backend and pilot-submission endpoint are not deployed; the public form therefore remains visibly fail-closed and does not send or store contact details.
 
 ## Offer under test
 
@@ -84,14 +84,23 @@ PUBLIC_PILOT_EMAIL=
 
 `PUBLIC_PILOT_ENDPOINT` is preferred. It receives JSON with `businessName`, `email`, `siteCount`, and `source`. `PUBLIC_PILOT_EMAIL` is an optional mail-client fallback; because it is compiled into the public bundle, only use an address intended for publication.
 
-## Public-launch gates
+## GitHub Pages deployment
 
-Before deployment:
+Pushes to `main` run `.github/workflows/pages.yml`, which builds with the `/proofpack/` project-site base, verifies emitted routes and assets, and publishes `dist/` through GitHub Pages.
 
-1. Choose the public ProofPack domain and set `PUBLIC_SITE_URL`.
-2. Identify the operating person/entity and public contact route.
-3. Publish a privacy policy that matches the selected form endpoint, hosting and retention.
-4. Connect and test `PUBLIC_PILOT_ENDPOINT`; keep the no-endpoint failure closed.
+```bash
+GITHUB_PAGES=1 npm run build
+npm run verify:pages-artifact
+```
+
+## Pilot-application launch gates
+
+Before accepting applications, customer data or payment:
+
+1. Identify the operating person/entity and public contact route.
+2. Publish a privacy policy that matches the selected form endpoint, hosting and retention.
+3. Connect and test `PUBLIC_PILOT_ENDPOINT`; keep the no-endpoint failure closed.
+4. Set `PUBLIC_SITE_URL` if the site moves to a custom domain.
 5. Confirm data hosting, access control, link expiry, photo retention, export and deletion behaviour before accepting client data.
 6. Replace synthetic photo slots only with staged/owned images or real pilot images used with permission.
 7. Validate the A$39/month GST treatment and billing process before collecting payment.
