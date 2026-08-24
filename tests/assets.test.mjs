@@ -9,18 +9,18 @@ async function bytes(path) {
 }
 
 test('brand SVG assets are accessible and self-describing', async () => {
-  const mark = (await bytes('brand/proofpack-mark.svg')).toString('utf8');
-  const lockup = (await bytes('brand/proofpack-lockup.svg')).toString('utf8');
+  const mark = (await bytes('brand/wrapsheet-mark.svg')).toString('utf8');
+  const lockup = (await bytes('brand/wrapsheet-lockup.svg')).toString('utf8');
   assert.match(mark, /<title/);
   assert.match(mark, /<desc/);
-  assert.match(lockup, /ProofPack/);
+  assert.match(lockup, /Wrapsheet/);
 });
 
 test('raster launch assets have valid signatures, dimensions and useful file sizes', async () => {
   const expected = new Map([
-    ['brand/proofpack-icon-180.png', [180, 180]],
-    ['brand/proofpack-icon-512.png', [512, 512]],
-    ['brand/proofpack-og.png', [1200, 630]],
+    ['brand/wrapsheet-icon-180.png', [180, 180]],
+    ['brand/wrapsheet-icon-512.png', [512, 512]],
+    ['brand/wrapsheet-og.png', [1200, 630]],
   ]);
 
   for (const [asset, [width, height]] of expected) {
@@ -34,9 +34,9 @@ test('raster launch assets have valid signatures, dimensions and useful file siz
 });
 
 test('downloadable sample report is a bounded, multi-page PDF without false pagination', async () => {
-  const report = await bytes('assets/proofpack-sample-report.pdf');
+  const report = await bytes('assets/wrapsheet-sample-report.pdf');
   assert.equal(report.subarray(0, 4).toString('ascii'), '%PDF');
-  const info = await stat(new URL('assets/proofpack-sample-report.pdf', root));
+  const info = await stat(new URL('assets/wrapsheet-sample-report.pdf', root));
   assert.ok(info.size > 10_000);
   assert.ok(info.size < 1_500_000);
   const pageObjects = [...report.toString('binary').matchAll(/\/Type\s*\/Page\b/g)].length;

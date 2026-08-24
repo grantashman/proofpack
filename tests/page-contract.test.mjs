@@ -9,10 +9,10 @@ async function read(path) {
   return readFile(path, 'utf8');
 }
 
-test('landing page names the cleaner audience and drives one pilot action', async () => {
+test('landing page names the field-service audience and drives one pilot action', async () => {
   const source = await read(pagePath);
-  assert.match(source, /Leave every clean with proof\./);
-  assert.match(source, /Australian commercial cleaners/);
+  assert.match(source, /The job's wrapped\. The proof's attached\./);
+  assert.match(source, /Australian field-service businesses/);
   assert.match(source, /Apply for the pilot/);
   assert.match(source, /id="pilot"/);
 });

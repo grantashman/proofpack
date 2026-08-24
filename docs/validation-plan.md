@@ -1,8 +1,8 @@
-# ProofPack validation plan
+# Wrapsheet validation plan
 
 ## Customer hypothesis
 
-Start with Australian owner-operators and small commercial-cleaning teams that service offices, strata common areas, clinics, retail premises or other repeat client sites. The useful discovery question is not whether reporting sounds attractive; it is whether the business currently spends time assembling proof, handles disputes or repeat questions, or struggles to make field evidence consistent.
+Start with Australian owner-operators and small field-service teams — commercial cleaners first, with a clear path to trade contractors and repair technicians — that service offices, strata common areas, clinics, retail premises or other repeat client sites. The useful discovery question is not whether reporting sounds attractive; it is whether the business currently spends time assembling proof, handles disputes or repeat questions, or struggles to make field evidence consistent.
 
 ## Offer to test
 
@@ -13,7 +13,7 @@ This is a pricing hypothesis, not a market benchmark. Do not discount it before 
 ## Manual pilot before product development
 
 1. Ask the operator to provide one existing client checklist with confidential details removed.
-2. Convert it into the ProofPack site template manually.
+2. Convert it into the Wrapsheet site template manually.
 3. Have the operator or cleaner capture a real completed visit using the smallest workable prototype.
 4. Produce and send the client-ready report manually behind the scenes where necessary.
 5. Observe what was confusing, skipped or duplicated.
@@ -23,7 +23,7 @@ Do not claim secure hosting, automatic PDF generation, client-link controls, off
 
 ## Interview prompts
 
-- Show me how you prove a recurring clean was completed today.
+- Show me how you prove a recurring clean or job was completed today.
 - What did the last client complaint or “was this done?” query look like?
 - Where do photos, notes and checklists live now?
 - Who assembles or sends the client update, and how long does that take?
@@ -31,7 +31,7 @@ Do not claim secure hosting, automatic PDF generation, client-link controls, off
 - What must be included for the report to be useful rather than paperwork?
 - Would five active sites cover the first paid use? If not, why?
 - What would make A$39/month obviously too high—or suspiciously cheap?
-- What existing tool would ProofPack need to sit beside?
+- What existing tool would Wrapsheet need to sit beside?
 
 Avoid asking “Would you use this?” Ask for the current artefact, the last incident, and a paid next step.
 

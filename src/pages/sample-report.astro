@@ -3,7 +3,7 @@ import '../styles/report.css';
 const rawBase = import.meta.env.BASE_URL;
 const base = rawBase.endsWith('/') ? rawBase : `${rawBase}/`;
 const homeUrl = base;
-const samplePdfUrl = `${base}assets/proofpack-sample-report.pdf`;
+const samplePdfUrl = `${base}assets/wrapsheet-sample-report.pdf`;
 ---
 <!doctype html>
 <html lang="en-AU">
@@ -11,11 +11,11 @@ const samplePdfUrl = `${base}assets/proofpack-sample-report.pdf`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
-    <title>Example proof-of-service report — ProofPack</title>
+    <title>Example proof-of-service report — Wrapsheet</title>
   </head>
   <body>
     <header class="sample-nav">
-      <a href={homeUrl}>← Back to ProofPack</a>
+      <a href={homeUrl}>← Back to Wrapsheet</a>
       <a href={samplePdfUrl}>Download PDF</a>
     </header>
     <main class="report">
@@ -78,8 +78,8 @@ const samplePdfUrl = `${base}assets/proofpack-sample-report.pdf`;
       </section>
 
       <footer class="report__footer">
-        <p><strong>Coastal Commercial Cleaning</strong><br />Fictional business used for this ProofPack example.</p>
-        <p>Generated with ProofPack<br />Report PP-0024</p>
+        <p><strong>Coastal Commercial Cleaning</strong><br />Fictional business used for this Wrapsheet example.</p>
+        <p>Generated with Wrapsheet<br />Report PP-0024</p>
       </footer>
     </main>
   </body>

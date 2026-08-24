@@ -7,7 +7,7 @@ for (const width of widths) {
   test(`landing page stays usable at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
-    await expect(page.getByRole('heading', { level: 1, name: 'Leave every clean with proof.' })).toBeVisible();
+    await expect(page.getByRole('heading', { level: 1, name: "The job's wrapped. The proof's attached." })).toBeVisible();
     await expect(page.getByText('$39', { exact: true })).toBeVisible();
     await expect(page.getByText('AUD / month', { exact: true })).toBeVisible();
     await expect(page.getByRole('link', { name: 'Apply for the pilot' }).first()).toBeVisible();
@@ -72,5 +72,5 @@ test('sample report is explicit fiction and print-shaped', async ({ page }) => {
   await page.goto('/sample-report/');
   await expect(page.getByText('Fictional example · for product demonstration')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1, name: 'Harbour Street Offices' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', '/assets/proofpack-sample-report.pdf');
+  await expect(page.getByRole('link', { name: 'Download PDF' })).toHaveAttribute('href', '/assets/wrapsheet-sample-report.pdf');
 });

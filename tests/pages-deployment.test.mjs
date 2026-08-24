@@ -11,11 +11,11 @@ async function read(path) {
   return readFile(path, 'utf8');
 }
 
-test('GitHub Pages build uses the ProofPack project-site base only for Pages', async () => {
+test('GitHub Pages build uses the Wrapsheet project-site base only for Pages', async () => {
   const config = await read(astroConfig);
   assert.match(config, /process\.env\.GITHUB_PAGES/);
   assert.match(config, /https:\/\/grantashman\.github\.io/);
-  assert.match(config, /\/proofpack/);
+  assert.match(config, /\/wrapsheet/);
 });
 
 test('public routes and assets derive from Astro BASE_URL', async () => {

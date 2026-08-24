@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 96" role="img" aria-labelledby="title desc">
-  <title id="title">ProofPack</title>
-  <desc id="desc">ProofPack wordmark with a completed service report mark</desc>
-  <rect x="4" y="4" width="88" height="88" rx="18" fill="oklch(98% 0.008 228)" stroke="oklch(80% 0.022 230)" stroke-width="2"/>
-  <path d="M27 19h32l11 11v47H27z" fill="none" stroke="oklch(18% 0.034 240)" stroke-width="4" stroke-linejoin="round"/>
-  <path d="M59 19v11h11M35 41h26M35 51h18" fill="none" stroke="oklch(18% 0.034 240)" stroke-width="4" stroke-linecap="round"/>
-  <path d="m46 66 6 6 13-15" fill="none" stroke="oklch(50% 0.17 232)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="118" y="62" fill="oklch(18% 0.034 240)" font-family="Bricolage Grotesque, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="-2">ProofPack</text>
-</svg>

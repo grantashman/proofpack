@@ -1,4 +1,4 @@
-name: Deploy ProofPack to GitHub Pages
+name: Deploy Wrapsheet to GitHub Pages
 
 on:
   push:

@@ -10,18 +10,18 @@ const route = (path: string) => `${base}${path.replace(/^\//, '')}`;
 const siteUrl = new URL(import.meta.env.PUBLIC_SITE_URL ?? Astro.site ?? Astro.url.origin);
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
 const sampleReportUrl = route('sample-report/');
-const samplePdfUrl = route('assets/proofpack-sample-report.pdf');
-const brandMarkUrl = route('brand/proofpack-mark.svg');
-const brandIconUrl = route('brand/proofpack-icon-180.png');
-const ogImageUrl = new URL(route('brand/proofpack-og.png'), siteUrl);
+const samplePdfUrl = route('assets/wrapsheet-sample-report.pdf');
+const brandMarkUrl = route('brand/wrapsheet-mark.svg');
+const brandIconUrl = route('brand/wrapsheet-icon-180.png');
+const ogImageUrl = new URL(route('brand/wrapsheet-og.png'), siteUrl);
 const price = formatPilotPrice();
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'ProofPack',
+  name: 'Wrapsheet',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  description: 'Proof-of-service reports for Australian commercial cleaning businesses.',
+  description: 'Proof-of-service reports for Australian field-service businesses.',
   offers: {
     '@type': 'Offer',
     price: pilotOffer.price.amount,
@@ -37,14 +37,14 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#eef7fa" />
-    <title>ProofPack — Proof-of-service reports for commercial cleaners</title>
+    <title>Wrapsheet — Proof-of-service reports for field-service businesses</title>
     <meta name="description" content="Turn site checklists, photos and issue notes into a client-ready proof-of-service report before your cleaning team leaves the building." />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" href={brandMarkUrl} type="image/svg+xml" />
     <link rel="apple-touch-icon" href={brandIconUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_AU" />
-    <meta property="og:title" content="ProofPack — Leave every clean with proof" />
+    <meta property="og:title" content="Wrapsheet — The job's wrapped. The proof's attached." />
     <meta property="og:description" content="Client-ready service reports for Australian commercial cleaners." />
     <meta property="og:image" content={ogImageUrl} />
     <meta property="og:url" content={canonicalUrl} />
@@ -55,13 +55,13 @@ const structuredData = {
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="nav-shell" aria-label="Primary navigation">
-      <a class="wordmark" href="#top" aria-label="ProofPack home">
+      <a class="wordmark" href="#top" aria-label="Wrapsheet home">
         <svg class="wordmark__mark" viewBox="0 0 36 36" aria-hidden="true">
           <path d="M8 4.5h15l5 5v22H8z" />
           <path d="M23 4.5v5h5M12 16h12M12 21h9M12 26h6" />
           <path class="wordmark__tick" d="m20.5 26 2.2 2.2 4.8-5.3" />
         </svg>
-        <span>ProofPack</span>
+        <span>Wrapsheet</span>
       </a>
       <a class="button button--small" href="#pilot">Apply for the pilot</a>
     </header>
@@ -69,8 +69,8 @@ const structuredData = {
     <main id="main">
       <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero__copy">
-          <p class="audience-line">Made for Australian commercial cleaners.</p>
-          <h1 id="hero-title">Leave every clean with proof.</h1>
+          <p class="audience-line">Made for Australian field-service businesses.</p>
+          <h1 id="hero-title">The job's wrapped. The proof's attached.</h1>
           <p class="hero__lede">Turn site checklists, before-and-after photos and issue notes into a client-ready service report before your team leaves the building.</p>
           <div class="hero__actions">
             <a class="button" href="#pilot">Apply for the pilot</a>
@@ -117,7 +117,7 @@ const structuredData = {
       <section class="workbench" aria-labelledby="workbench-title">
         <header class="section-head section-head--hang">
           <h2 id="workbench-title">From site walk-through to client inbox.</h2>
-          <p>ProofPack keeps the field workflow short and the client-facing output considered.</p>
+          <p>Wrapsheet keeps the field workflow short and the client-facing output considered.</p>
         </header>
 
         <div class="workbench__step">
@@ -206,7 +206,7 @@ const structuredData = {
         <header class="section-head section-head--hang"><h2 id="faq-title">Questions a cleaner should ask.</h2></header>
         <div class="faq__list">
           <details>
-            <summary>Is ProofPack a job-management system?</summary>
+            <summary>Is Wrapsheet a job-management system?</summary>
             <p>No. It focuses on the last metres of the cleaning visit: complete the agreed checks, capture evidence, record exceptions and send a clear client report. Scheduling, quoting, payroll and invoicing are deliberately outside the founding pilot.</p>
           </details>
           <details>
@@ -265,7 +265,7 @@ const structuredData = {
     <footer class="footer">
       <p class="footer__statement">The work is finished. The client can see it.</p>
       <div class="footer__meta">
-        <a class="wordmark wordmark--small" href="#top">ProofPack</a>
+        <a class="wordmark wordmark--small" href="#top">Wrapsheet</a>
         <span>Australian commercial-cleaning pilot · 2026</span>
         <a href={sampleReportUrl}>Sample report</a>
       </div>

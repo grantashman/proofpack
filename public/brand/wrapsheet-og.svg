@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
-  <title id="title">ProofPack social card</title>
-  <desc id="desc">Leave every clean with proof. Client-ready service reports for Australian commercial cleaners.</desc>
+  <title id="title">Wrapsheet social card</title>
+  <desc id="desc">The job's wrapped. The proof's attached. Proof-of-service reports for Australian field-service businesses.</desc>
   <rect width="1200" height="630" fill="oklch(98% 0.008 228)"/>
   <rect x="760" y="70" width="370" height="490" rx="10" fill="oklch(95.5% 0.012 228)" stroke="oklch(80% 0.022 230)" stroke-width="2"/>
   <rect x="795" y="115" width="300" height="52" rx="6" fill="oklch(98% 0.008 228)"/>
@@ -13,11 +13,12 @@
     <path d="M0 0h38l13 13v56H0z" fill="none" stroke="oklch(18% 0.034 240)" stroke-width="4" stroke-linejoin="round"/>
     <path d="M38 0v13h13M10 28h30M10 39h21" fill="none" stroke="oklch(18% 0.034 240)" stroke-width="4" stroke-linecap="round"/>
     <path d="m22 57 7 7 16-18" fill="none" stroke="oklch(50% 0.17 232)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-4 69h46" stroke="oklch(50% 0.17 232)" stroke-width="4" stroke-linecap="round"/>
   </g>
-  <text x="152" y="122" fill="oklch(18% 0.034 240)" font-family="Arial, sans-serif" font-size="38" font-weight="700">ProofPack</text>
-  <text x="80" y="255" fill="oklch(18% 0.034 240)" font-family="Arial, sans-serif" font-size="74" font-weight="700" letter-spacing="-3">Leave every clean</text>
-  <text x="80" y="335" fill="oklch(18% 0.034 240)" font-family="Arial, sans-serif" font-size="74" font-weight="700" letter-spacing="-3">with proof.</text>
-  <text x="80" y="425" fill="oklch(43% 0.025 232)" font-family="Arial, sans-serif" font-size="31">Client-ready service reports for</text>
-  <text x="80" y="470" fill="oklch(43% 0.025 232)" font-family="Arial, sans-serif" font-size="31">Australian commercial cleaners.</text>
+  <text x="152" y="122" fill="oklch(18% 0.034 240)" font-family="Arial, sans-serif" font-size="38" font-weight="700">Wrapsheet</text>
+  <text x="80" y="255" fill="oklch(18% 0.034 240)" font-family="Arial, sans-serif" font-size="74" font-weight="700" letter-spacing="-3">The job's wrapped.</text>
+  <text x="80" y="335" fill="oklch(18% 0.034 240)" font-family="Arial, sans-serif" font-size="74" font-weight="700" letter-spacing="-3">The proof's attached.</text>
+  <text x="80" y="425" fill="oklch(43% 0.025 232)" font-family="Arial, sans-serif" font-size="31">Proof-of-service reports for</text>
+  <text x="80" y="470" fill="oklch(43% 0.025 232)" font-family="Arial, sans-serif" font-size="31">Australian field-service businesses.</text>
   <rect x="80" y="530" width="320" height="4" fill="oklch(50% 0.17 232)"/>
 </svg>

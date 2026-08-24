@@ -1,8 +1,12 @@
-# ProofPack
+# Wrapsheet
 
-Client-ready proof-of-service reports for Australian commercial cleaners.
+Proof-of-service reports for Australian field-service businesses.
 
-**Repository status:** private source repository with a public static validation preview at <https://grantashman.github.io/proofpack/>. The product backend and pilot-submission endpoint are not deployed; the public form therefore remains visibly fail-closed and does not send or store contact details.
+**Repository status:** private source repository with a public static validation preview at <https://grantashman.github.io/wrapsheet/>. The product backend and pilot-submission endpoint are not deployed; the public form therefore remains visibly fail-closed and does not send or store contact details.
+
+## Tagline
+
+**The job's wrapped. The proof's attached.**
 
 ## Offer under test
 
@@ -16,7 +20,7 @@ The price and feature boundary live in [`src/data/offer.mjs`](src/data/offer.mjs
 
 ## Product hypothesis
 
-A small commercial-cleaning business should be able to complete a site checklist, attach before/after and exception evidence, and send a consistent client report before leaving the building—without adopting a full scheduling, payroll or invoicing platform.
+A small field-service business — a commercial cleaner, a trade contractor or a repair technician — should be able to complete a site checklist, attach before/after and exception evidence, and send a consistent client report before leaving the building, without adopting a full scheduling, payroll or invoicing platform.
 
 ### Founding feature set
 
@@ -27,7 +31,7 @@ A small commercial-cleaning business should be able to complete a site checklist
 - Australian spelling, dates, addresses and GST wording
 - Straightforward report export and deletion contract
 
-All company names, sites, report identifiers and evidence counts shown in the demo are explicitly fictional. The page contains no invented testimonials, customer logos or outcome claims.
+The founding pilot is scoped around commercial cleaning, but the hero and value copy are kept trade-agnostic so the product can extend to trade and repair workers who also need to prove a job was done. All company names, sites, report identifiers and evidence counts shown in the demo are explicitly fictional. The page contains no invented testimonials, customer logos or outcome claims.
 
 ## Included deliverables
 
@@ -35,10 +39,10 @@ All company names, sites, report identifiers and evidence counts shown in the de
 |---|---|
 | Responsive landing page | `src/pages/index.astro` |
 | Browser/print sample report | `src/pages/sample-report.astro` |
-| Downloadable sample PDF | `public/assets/proofpack-sample-report.pdf` |
+| Downloadable sample PDF | `public/assets/wrapsheet-sample-report.pdf` |
 | Mark and lockup | `public/brand/*.svg` |
-| 180px and 512px app icons | `public/brand/proofpack-icon-*.png` |
-| 1200×630 social card | `public/brand/proofpack-og.png` |
+| 180px and 512px app icons | `public/brand/wrapsheet-icon-*.png` |
+| 1200×630 social card | `public/brand/wrapsheet-og.png` |
 | Portable design tokens | `tokens.css` |
 | Asset generators | `scripts/` |
 | Contract and browser tests | `tests/` |
@@ -86,7 +90,7 @@ PUBLIC_PILOT_EMAIL=
 
 ## GitHub Pages deployment
 
-Pushes to `main` run `.github/workflows/pages.yml`, which builds with the `/proofpack/` project-site base, verifies emitted routes and assets, and publishes `dist/` through GitHub Pages.
+Pushes to `main` run `.github/workflows/pages.yml`, which builds with the `/wrapsheet/` project-site base, verifies emitted routes and assets, and publishes `dist/` through GitHub Pages.
 
 ```bash
 GITHUB_PAGES=1 npm run build
@@ -110,7 +114,7 @@ Before accepting applications, customer data or payment:
 
 - Astro 7 static output
 - Self-hosted Fontsource typography
-- CSS/HTML product demonstrations—no fake browser or phone chrome
+- CSS/HTML product demonstrations — no fake browser or phone chrome
 - Playwright and Axe browser QA
 - GitHub Actions CI
 

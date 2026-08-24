@@ -4,7 +4,7 @@ import { mkdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 const origin = 'http://127.0.0.1:4322';
-const output = fileURLToPath(new URL('../public/assets/proofpack-sample-report.pdf', import.meta.url));
+const output = fileURLToPath(new URL('../public/assets/wrapsheet-sample-report.pdf', import.meta.url));
 await mkdir(fileURLToPath(new URL('../public/assets/', import.meta.url)), { recursive: true });
 
 const preview = spawn('npm', ['run', 'preview', '--', '--host', '127.0.0.1', '--port', '4322'], {

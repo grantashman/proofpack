@@ -78,7 +78,7 @@ if (form) {
       businessName: String(data.get('businessName') ?? '').trim(),
       email: String(data.get('email') ?? '').trim(),
       siteCount: String(data.get('siteCount') ?? ''),
-      source: 'proofpack-landing-page',
+      source: 'wrapsheet-landing-page',
     };
 
     setButtonState('loading');
@@ -99,7 +99,7 @@ if (form) {
       }
 
       if (contactEmail) {
-        const subject = encodeURIComponent(`ProofPack pilot — ${payload.businessName}`);
+        const subject = encodeURIComponent(`Wrapsheet pilot — ${payload.businessName}`);
         const body = encodeURIComponent(`Business: ${payload.businessName}\nEmail: ${payload.email}\nActive sites: ${payload.siteCount}`);
         window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
         setButtonState('success');
