@@ -1,0 +1,82 @@
+---
+import '../styles/report.css';
+---
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Example proof-of-service report — ProofPack</title>
+  </head>
+  <body>
+    <header class="sample-nav">
+      <a href="/">← Back to ProofPack</a>
+      <a href="/assets/proofpack-sample-report.pdf">Download PDF</a>
+    </header>
+    <main class="report">
+      <div class="report__example">Fictional example · for product demonstration</div>
+      <header class="report__header">
+        <div class="report__company">
+          <div class="report__logo">C</div>
+          <div><strong>Coastal Commercial Cleaning</strong><span>Proof-of-service report</span></div>
+        </div>
+        <dl class="report__identity">
+          <div><dt>Report</dt><dd>PP-0024</dd></div>
+          <div><dt>Service date</dt><dd>24 August 2026</dd></div>
+          <div><dt>Service status</dt><dd class="report__complete">Complete</dd></div>
+          <div><dt>Follow-up</dt><dd class="report__follow-up">1 item open</dd></div>
+        </dl>
+      </header>
+
+      <section class="report__site">
+        <div><span>Client site</span><h1>Harbour Street Offices</h1><p>100 Harbour Street, Sydney NSW 2000</p></div>
+        <dl class="report__service-meta">
+          <div><dt>Service window</dt><dd>6:30–8:47 pm</dd></div>
+          <div><dt>Completed by</dt><dd>Evening team</dd></div>
+        </dl>
+      </section>
+
+      <section class="report__summary" aria-label="Service summary">
+        <div><strong>6</strong><span>areas checked</span></div>
+        <div><strong>24</strong><span>checklist items passed</span></div>
+        <div><strong>18</strong><span>photos attached</span></div>
+        <div><strong>1</strong><span>follow-up note</span></div>
+      </section>
+
+      <section class="report__section">
+        <h2>Service checks</h2>
+        <div class="check-table">
+          <div class="check-table__head"><span>Area</span><span>Result</span><span>Evidence</span></div>
+          <div><span><strong>Reception and entry glass</strong>Glass cleaned, touchpoints sanitised, floor vacuumed.</span><span class="result result--pass">Passed</span><span>3 photos</span></div>
+          <div><span><strong>Kitchen and shared surfaces</strong>Benches sanitised, bins relined, floor mopped.</span><span class="result result--pass">Passed</span><span>4 photos</span></div>
+          <div><span><strong>Open-plan work area</strong>Desks dusted where clear, floor vacuumed, bins emptied.</span><span class="result result--pass">Passed</span><span>5 photos</span></div>
+          <div><span><strong>Ground-floor washrooms</strong>Fixtures cleaned, supplies checked, floors mopped.</span><span class="result result--note">Note</span><span>4 photos</span></div>
+          <div><span><strong>Meeting rooms</strong>Tables sanitised, glass spot-cleaned, floor vacuumed.</span><span class="result result--pass">Passed</span><span>2 photos</span></div>
+          <div><span><strong>Waste and final lock-up</strong>Waste transferred, lights checked, doors secured.</span><span class="result result--pass">Passed</span><span>Checklist</span></div>
+        </div>
+      </section>
+
+      <section class="report__section report__issue">
+        <div><span class="result result--note">Client attention</span><h2>Soap dispenser stock running low</h2><p>The accessible ground-floor washroom has approximately one service remaining. Replacement stock was not present in the cleaner’s cupboard.</p></div>
+        <dl><div><dt>Logged</dt><dd>8:42 pm</dd></div><div><dt>Suggested follow-up</dt><dd>Restock before the next scheduled service</dd></div></dl>
+      </section>
+
+      <section class="report__section">
+        <h2>Selected photo evidence</h2>
+        <div class="photo-grid">
+          <figure><div class="photo photo--before"><span>01</span></div><figcaption>Reception glass · before</figcaption></figure>
+          <figure><div class="photo photo--after"><span>02</span></div><figcaption>Reception glass · after</figcaption></figure>
+          <figure><div class="photo photo--before"><span>03</span></div><figcaption>Kitchen floor · before</figcaption></figure>
+          <figure><div class="photo photo--after"><span>04</span></div><figcaption>Kitchen floor · after</figcaption></figure>
+        </div>
+        <p class="report__caption">The production report will carry the cleaner’s actual photographs. These diagrammatic placeholders avoid implying a real customer or service visit.</p>
+      </section>
+
+      <footer class="report__footer">
+        <p><strong>Coastal Commercial Cleaning</strong><br />Fictional business used for this ProofPack example.</p>
+        <p>Generated with ProofPack<br />Report PP-0024</p>
+      </footer>
+    </main>
+  </body>
+</html>

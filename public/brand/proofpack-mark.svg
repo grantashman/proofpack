@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">ProofPack mark</title>
+  <desc id="desc">A report page with a completed check</desc>
+  <rect width="64" height="64" rx="12" fill="oklch(98% 0.008 228)"/>
+  <path d="M17 10h23l8 8v36H17z" fill="none" stroke="oklch(18% 0.034 240)" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M40 10v8h8M23 26h19M23 34h13" fill="none" stroke="oklch(18% 0.034 240)" stroke-width="3" stroke-linecap="round"/>
+  <path d="m31 45 4 4 9-10" fill="none" stroke="oklch(50% 0.17 232)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

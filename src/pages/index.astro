@@ -1,0 +1,270 @@
+---
+import { pilotOffer, formatPilotPrice } from '../data/offer.mjs';
+import '../styles/page.css';
+
+const pilotEndpoint = import.meta.env.PUBLIC_PILOT_ENDPOINT ?? '';
+const pilotEmail = import.meta.env.PUBLIC_PILOT_EMAIL ?? '';
+const siteUrl = import.meta.env.PUBLIC_SITE_URL ?? Astro.url.origin;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl);
+const price = formatPilotPrice();
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'ProofPack',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: 'Proof-of-service reports for Australian commercial cleaning businesses.',
+  offers: {
+    '@type': 'Offer',
+    price: pilotOffer.price.amount,
+    priceCurrency: pilotOffer.price.currency,
+    category: 'Founding cleaner pilot',
+  },
+};
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#eef7fa" />
+    <title>ProofPack — Proof-of-service reports for commercial cleaners</title>
+    <meta name="description" content="Turn site checklists, photos and issue notes into a client-ready proof-of-service report before your cleaning team leaves the building." />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/brand/proofpack-mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/brand/proofpack-icon-180.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_AU" />
+    <meta property="og:title" content="ProofPack — Leave every clean with proof" />
+    <meta property="og:description" content="Client-ready service reports for Australian commercial cleaners." />
+    <meta property="og:image" content={`${siteUrl}/brand/proofpack-og.png`} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(structuredData)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="nav-shell" aria-label="Primary navigation">
+      <a class="wordmark" href="#top" aria-label="ProofPack home">
+        <svg class="wordmark__mark" viewBox="0 0 36 36" aria-hidden="true">
+          <path d="M8 4.5h15l5 5v22H8z" />
+          <path d="M23 4.5v5h5M12 16h12M12 21h9M12 26h6" />
+          <path class="wordmark__tick" d="m20.5 26 2.2 2.2 4.8-5.3" />
+        </svg>
+        <span>ProofPack</span>
+      </a>
+      <a class="button button--small" href="#pilot">Apply for the pilot</a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="audience-line">Made for Australian commercial cleaners.</p>
+          <h1 id="hero-title">Leave every clean with proof.</h1>
+          <p class="hero__lede">Turn site checklists, before-and-after photos and issue notes into a client-ready service report before your team leaves the building.</p>
+          <div class="hero__actions">
+            <a class="button" href="#pilot">Apply for the pilot</a>
+            <a class="text-link" href="/sample-report/">View the sample report <span aria-hidden="true">↗</span></a>
+          </div>
+          <ul class="assurance-list" aria-label="Pilot assurances">
+            <li>Australian-ready</li>
+            <li>No lock-in</li>
+            <li>Setup without a sales call</li>
+          </ul>
+        </div>
+
+        <figure class="report-preview report-preview--hero" aria-labelledby="hero-report-caption">
+          <div class="report-preview__bar">
+            <span>Example report</span>
+            <span>PP-0024</span>
+          </div>
+          <div class="report-preview__head">
+            <div>
+              <p class="report-preview__brand">Coastal Commercial Cleaning</p>
+              <h2>Harbour Street Offices</h2>
+              <p>Sydney NSW · 24 August 2026</p>
+            </div>
+            <span class="status-badge status-badge--complete">Service complete</span>
+          </div>
+          <div class="report-preview__summary">
+            <div><strong>6</strong><span>areas checked</span></div>
+            <div><strong>18</strong><span>photos attached</span></div>
+            <div><strong>1</strong><span>follow-up note</span></div>
+          </div>
+          <div class="report-preview__checklist" aria-label="Example completed areas">
+            <div><span class="check-mark" aria-hidden="true">✓</span><span>Reception and entry glass</span><span>Passed</span></div>
+            <div><span class="check-mark" aria-hidden="true">✓</span><span>Kitchen and shared surfaces</span><span>Passed</span></div>
+            <div><span class="note-mark" aria-hidden="true">!</span><span>Ground-floor washrooms</span><span>Note added</span></div>
+          </div>
+          <div class="report-preview__photos" aria-label="Illustrated example service photograph slots">
+            <div><span>Before</span><i aria-hidden="true"></i><small>Illustrated demo photo slot</small></div>
+            <div><span>After</span><i aria-hidden="true"></i><small>Illustrated demo photo slot</small></div>
+          </div>
+          <figcaption id="hero-report-caption">A clear record of what was done, what was found and what needs attention.</figcaption>
+        </figure>
+      </section>
+
+      <section class="workbench" aria-labelledby="workbench-title">
+        <header class="section-head section-head--hang">
+          <h2 id="workbench-title">From site walk-through to client inbox.</h2>
+          <p>ProofPack keeps the field workflow short and the client-facing output considered.</p>
+        </header>
+
+        <div class="workbench__step">
+          <div class="step-copy">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Open the site. Work the checklist.</h3>
+            <p>Repeatable site templates keep contract requirements visible on the phone. Cleaners record pass, issue or not applicable as they move.</p>
+          </div>
+          <figure class="capture-panel" aria-label="Example cleaning checklist interface">
+            <div class="capture-panel__top"><span>Harbour Street Offices</span><span>3 of 6 areas</span></div>
+            <h4>Kitchen and shared surfaces</h4>
+            <div class="capture-row capture-row--done"><span>Benches wiped and sanitised</span><span>Passed</span></div>
+            <div class="capture-row capture-row--done"><span>Bins emptied and relined</span><span>Passed</span></div>
+            <div class="capture-row"><span>Floor vacuumed and mopped</span><span>Check</span></div>
+            <div class="capture-panel__actions"><span>Add photo</span><span>Add note</span></div>
+          </figure>
+        </div>
+
+        <div class="workbench__step workbench__step--reverse">
+          <div class="step-copy">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Capture the exception, not a message thread.</h3>
+            <p>Attach evidence where it belongs. A low soap dispenser or damaged fixture becomes a dated follow-up note in the same report.</p>
+          </div>
+          <figure class="issue-panel" aria-label="Example issue note interface">
+            <div class="issue-panel__image" aria-hidden="true"><span>Illustrated demo photo slot</span></div>
+            <div class="issue-panel__body">
+              <span class="status-badge status-badge--attention">Client attention</span>
+              <h4>Soap dispenser stock running low</h4>
+              <p>Ground-floor accessible washroom · added 8:42 pm</p>
+              <div class="issue-panel__meta"><span>Notify site contact</span><span>Included in report</span></div>
+            </div>
+          </figure>
+        </div>
+
+        <div class="workbench__step">
+          <div class="step-copy">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Review once. Send one useful report.</h3>
+            <p>Your logo, service summary, checks, photographs and follow-ups are assembled into a consistent PDF and share link.</p>
+            <a class="text-link" href="/assets/proofpack-sample-report.pdf">Download the example PDF <span aria-hidden="true">↓</span></a>
+          </div>
+          <figure class="send-panel" aria-label="Example report delivery summary">
+            <div class="send-panel__paper">
+              <span class="send-panel__mark" aria-hidden="true">P</span>
+              <div><strong>Service report ready</strong><span>Harbour Street Offices · PP-0024</span></div>
+            </div>
+            <div class="send-panel__recipients"><span>To</span><strong>facilities@harbourstreet.example</strong></div>
+            <div class="send-panel__delivery"><span class="check-mark" aria-hidden="true">✓</span><span>PDF attached</span><span class="check-mark" aria-hidden="true">✓</span><span>Client link included</span></div>
+          </figure>
+        </div>
+      </section>
+
+      <section class="feature-sheet" aria-labelledby="feature-title">
+        <header class="section-head section-head--hang">
+          <h2 id="feature-title">Enough structure to look professional. Not enough software to slow the job.</h2>
+        </header>
+        <dl class="spec-sheet">
+          <div><dt>Site templates</dt><dd>Reuse contract-specific checks on every visit.</dd><dd>Included</dd></div>
+          <div><dt>Photo evidence</dt><dd>Attach before, after and issue photos to the exact area.</dd><dd>Included</dd></div>
+          <div><dt>Client reports</dt><dd>Branded PDF and client share link from one review.</dd><dd>Unlimited</dd></div>
+          <div><dt>Issue follow-up</dt><dd>Record consumables, damage and access problems with a timestamp.</dd><dd>Included</dd></div>
+          <div><dt>Australian format</dt><dd>Local dates, addresses, spelling and GST-ready pricing.</dd><dd>Default</dd></div>
+          <div><dt>Data exit</dt><dd>Download reports and evidence without a lock-in period.</dd><dd>Any time</dd></div>
+        </dl>
+      </section>
+
+      <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="pricing__intro">
+          <h2 id="pricing-title">A practical price for a small cleaning business.</h2>
+          <p>Start with real client sites for 14 days. Keep it only if the reports earn their place in your workflow.</p>
+        </div>
+        <div class="price-card">
+          <p class="price-card__name">Founding cleaner pilot</p>
+          <p class="price-card__price"><span>{price}</span><small>AUD / month</small></p>
+          <p class="price-card__tax">GST included · no lock-in</p>
+          <ul>
+            {pilotOffer.features.map((feature) => <li><span aria-hidden="true">✓</span>{feature}</li>)}
+          </ul>
+          <a class="button button--wide" href="#pilot">Apply for the pilot</a>
+          <p class="price-card__fineprint">The 14-day pilot does not auto-convert. We’ll confirm billing with you before any paid period begins.</p>
+        </div>
+      </section>
+
+      <section class="faq" aria-labelledby="faq-title">
+        <header class="section-head section-head--hang"><h2 id="faq-title">Questions a cleaner should ask.</h2></header>
+        <div class="faq__list">
+          <details>
+            <summary>Is ProofPack a job-management system?</summary>
+            <p>No. It focuses on the last metres of the cleaning visit: complete the agreed checks, capture evidence, record exceptions and send a clear client report. Scheduling, quoting, payroll and invoicing are deliberately outside the founding pilot.</p>
+          </details>
+          <details>
+            <summary>Will cleaners need to learn complicated software?</summary>
+            <p>The field flow is designed for a phone and a repeatable site checklist. The founding pilot includes direct onboarding so we can observe where the workflow needs to become simpler.</p>
+          </details>
+          <details>
+            <summary>Can I use my own logo and site checks?</summary>
+            <p>Yes. Your business name, logo and client-specific checklist appear in the report. The example page uses a fictional cleaning company and site to show the intended output.</p>
+          </details>
+          <details>
+            <summary>What happens to photos and reports if I leave?</summary>
+            <p>The intended product contract is straightforward export and deletion. The pilot will verify the exact retention period and export process before production use.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="pilot" id="pilot" aria-labelledby="pilot-title">
+        <div class="pilot__copy">
+          <h2 id="pilot-title">Bring one real site. Leave with one real report.</h2>
+          <p>Apply for the founding pilot for Australian commercial cleaners. We’ll use your existing checklist—not ask you to redesign the business around the software.</p>
+        </div>
+        <form class="pilot-form" method="post" data-pilot-form data-endpoint={pilotEndpoint} data-email={pilotEmail} novalidate>
+          <div class="field">
+            <label for="business-name">Cleaning business name <span aria-hidden="true">(required)</span></label>
+            <input id="business-name" name="businessName" type="text" autocomplete="organization" required aria-describedby="business-name-help" />
+            <span id="business-name-help" class="field__help">The name you want shown on client reports.</span>
+          </div>
+          <div class="field">
+            <label for="email">Work email address <span aria-hidden="true">(required)</span></label>
+            <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@cleaningbusiness.com.au" required aria-describedby="email-help" />
+            <span id="email-help" class="field__help">Used only to arrange the founding pilot.</span>
+          </div>
+          <div class="field">
+            <label for="site-count">Active client sites <span>(optional)</span></label>
+            <select id="site-count" name="siteCount">
+              <option value="">Choose a range</option>
+              <option value="1-5">1–5 sites</option>
+              <option value="6-15">6–15 sites</option>
+              <option value="16+">16 or more sites</option>
+            </select>
+            <span class="field__help">This helps us keep the pilot relevant.</span>
+          </div>
+          <div class="field field--trap" aria-hidden="true">
+            <label for="website">Leave this blank</label>
+            <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <button class="button button--wide" type="submit" data-submit aria-describedby="pilot-status" disabled aria-disabled="true">Apply for the pilot</button>
+          <p class="pilot-form__status" data-js-required data-tone="error">JavaScript is required to apply. No details have been sent.</p>
+          <p class="pilot-form__status" id="pilot-status" data-status aria-live="polite">We’ll reply by email with fit and setup steps. No payment details are collected.</p>
+          <p class="pilot-form__privacy">Contact details are used only to respond to this pilot application. Do not enter client information.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__statement">The work is finished. The client can see it.</p>
+      <div class="footer__meta">
+        <a class="wordmark wordmark--small" href="#top">ProofPack</a>
+        <span>Australian commercial-cleaning pilot · 2026</span>
+        <a href="/sample-report/">Sample report</a>
+      </div>
+    </footer>
+
+    <script>
+      import '../scripts/pilot-form.ts';
+    </script>
+  </body>
+</html>

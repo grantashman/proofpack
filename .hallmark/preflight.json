@@ -1,0 +1,9 @@
+{
+  "scanned_at": "2026-08-24",
+  "framework": "Astro 7 static output",
+  "font_stack": "Self-hosted Bricolage Grotesque Variable, IBM Plex Sans, IBM Plex Mono",
+  "palette": "Root OKLCH semantic tokens in tokens.css; Cobalt modern-minimal theme",
+  "motion": "CSS-only product settle and button feedback; reduced-motion fallback",
+  "spacing": "4pt semantic scale",
+  "project_state": "Greenfield project; no prior design system to preserve"
+}
